@@ -5,6 +5,11 @@ public class Croc extends Actor
 
     public void act()
     {
-        move(1);
+        if(Greenfoot.isKeyDown("a")){
+            move(-1);
+        }
+        if(Greenfoot.isKeyDown("d")){
+            move(1);
+        }
     }
 }

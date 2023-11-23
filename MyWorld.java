@@ -6,6 +6,6 @@ public class MyWorld extends World
     {   
         super(600, 400, 1);
         Croc crocky = new Croc();
-        addObject(crocky, 69, 69);
+        addObject(crocky, 95, 385);
     }
 }
