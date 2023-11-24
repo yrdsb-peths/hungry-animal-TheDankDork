@@ -1,7 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class Food extends Actor
-{
+public class Food extends Actor{
     public int xPos;
     public int yPos;
     
@@ -12,6 +11,6 @@ public class Food extends Actor
     
     public void act(){
         setLocation(xPos, yPos);
-        yPos--;
+        yPos++;
     }
 }
