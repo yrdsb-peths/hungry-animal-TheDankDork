@@ -9,5 +9,15 @@ public class Croc extends Actor{
         if(Greenfoot.isKeyDown("d")){
             move(1);
         }
+        
+        eat();
+    }
+    
+    private void eat(){
+        if(isTouching(Food.class)){
+            removeTouching(Food.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.spawnPork();           
+        }
     }
 }

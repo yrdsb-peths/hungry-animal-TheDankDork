@@ -6,10 +6,17 @@ public class MyWorld extends World
     {   
         super(600, 400, 1);
         
-        Croc crocky = new Croc();
-        Food pork = new Food(0, 0);
+        int score = 0;
+        int lives = 3;
         
+        Croc crocky = new Croc();      
         addObject(crocky, 95, 385);
-        addObject(pork, 0, 0);
+        spawnPork();
+    }
+    
+    public void spawnPork(){
+        int x = Greenfoot.getRandomNumber(600);
+        Food pork = new Food(x, 0);
+        addObject(pork, x, 0);
     }
 }
