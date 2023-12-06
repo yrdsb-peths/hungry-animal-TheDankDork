@@ -17,8 +17,10 @@ public class Croc extends Actor{
         if(isTouching(Food.class)){
             removeTouching(Food.class);
             MyWorld world = (MyWorld) getWorld();
-            world.spawnPork(); 
-            world.modifyScore(1);
+            world.modifyScore(Food.points);
+            
+            world.spawnRandom(); 
+
         }
     }
 }

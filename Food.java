@@ -3,10 +3,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Food extends Actor{
     public int xPos;
     public int yPos;
+    public static int points = 1;
+    public static int livesTaken = 1;
     
     public Food(int xPos, int yPos){
         this.xPos = xPos;
-        this.yPos = yPos;        
+        this.yPos = yPos;
+    }
+    
+    public Food(int xPos, int yPos, int points, int livesTaken){
+        this.xPos = xPos;
+        this.yPos = yPos;
     }
     
     public void act(){
@@ -15,14 +22,14 @@ public class Food extends Actor{
         
         if(isTouchingGround()){
             MyWorld world = (MyWorld) getWorld();
-            world.modifyLives(-1);
+            world.modifyLives(-livesTaken);
             world.removeObject(this);
             
             if(world.lives <= 0){
                 world.gameOver();
             }
             else{
-                world.spawnPork();
+                world.spawnRandom();
             }              
         }
     }
