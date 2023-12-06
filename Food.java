@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 
 public class Food extends Actor{
     public int xPos;
@@ -6,22 +6,21 @@ public class Food extends Actor{
     public static int points = 1;
     public static int livesTaken = 1;
     
-    public Food(int xPos, int yPos){
+    public Food(int xPos, int yPos, int points, int livesTaken, String image){
         this.xPos = xPos;
         this.yPos = yPos;
-    }
-    
-    public Food(int xPos, int yPos, int points, int livesTaken){
-        this.xPos = xPos;
-        this.yPos = yPos;
+        this.points = points;
+        this.livesTaken = livesTaken;
+        setImage(image);
     }
     
     public void act(){
         setLocation(xPos, yPos);
-        yPos += 2;
+        
+        MyWorld world = (MyWorld) getWorld();
+        yPos += (2 + world.speedMod);
         
         if(isTouchingGround()){
-            MyWorld world = (MyWorld) getWorld();
             world.modifyLives(-livesTaken);
             world.removeObject(this);
             

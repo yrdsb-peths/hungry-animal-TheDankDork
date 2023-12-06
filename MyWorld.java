@@ -1,9 +1,9 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 
-public class MyWorld extends World
-{
-    int score = 0;
+public class MyWorld extends World{
+    public int score = 0;
     public int lives = 3;
+    public int speedMod = 1;
 
     Label displayScore = new Label("Score: ", score, 30);
     Label displayLives = new Label("Lives: ", lives, 30);
@@ -25,11 +25,14 @@ public class MyWorld extends World
     public void gameOver() {
         Label gameOverLabel = new Label("Game Over", 90);
         addObject(gameOverLabel, 300, 200);
+        
+        Restart restartButton = new Restart();
+        addObject(restartButton, 300, 300);
     }
     
     public void spawnRandom(){
         int i = Greenfoot.getRandomNumber(50);
-        if(i < 25){
+        if(i < 30){
             spawnPork();
         }
         
@@ -48,29 +51,29 @@ public class MyWorld extends World
     
     public void spawnPork(){
         int x = Greenfoot.getRandomNumber(600);
-        Food pork = new Food(x, 0);
+        Food pork = new Food(x, 0, 1, 1, "pig.png");
         addObject(pork, x, 0);
     }   
     
     public void spawnLobster(){
         int x = Greenfoot.getRandomNumber(600);
-        Food lobster = new Food(x, 0, 3, 1);
+        Food lobster = new Food(x, 0, 3, 1, "lobster.png");
         addObject(lobster, x, 0);
     }
     
     public void spawnBurger(){
         int x = Greenfoot.getRandomNumber(600);
-        Food burger = new Food(x, 0, 10, -1);
+        Food burger = new Food(x, 0, 25, -3, "hamburger.png");
         addObject(burger, x, 0);
     }
     
     public void spawnBomb(){
         int x = Greenfoot.getRandomNumber(600);
-        Food bomb = new Food(x, 0, -5, 0);
+        Food bomb = new Food(x, 0, -10, 0, "bomb.png");
         addObject(bomb, x, 0);
     }
     
-    public void modifyScore(int points){
+    public void modifyScore(int points){    
         score += points;
         displayScore.setValue(score);
     }
@@ -79,5 +82,4 @@ public class MyWorld extends World
         lives += amount;
         displayLives.setValue(lives);
     }
-
 }
