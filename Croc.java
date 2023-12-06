@@ -4,10 +4,10 @@ public class Croc extends Actor{
 
     public void act(){
         if(Greenfoot.isKeyDown("a")){
-            move(-1);
+            move(-3);
         }
         if(Greenfoot.isKeyDown("d")){
-            move(1);
+            move(3);
         }
 
         eat();
@@ -18,7 +18,7 @@ public class Croc extends Actor{
             removeTouching(Food.class);
             MyWorld world = (MyWorld) getWorld();
             world.spawnPork(); 
-            world.increaseScore(1);
+            world.modifyScore(1);
         }
     }
 }
