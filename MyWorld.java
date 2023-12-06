@@ -25,6 +25,9 @@ public class MyWorld extends World{
     public void gameOver() {
         Label gameOverLabel = new Label("Game Over", 90);
         addObject(gameOverLabel, 300, 200);
+        
+        Restart restartButton = new Restart();
+        addObject(restartButton, 300, 300);
     }
     
     public void spawnRandom(){

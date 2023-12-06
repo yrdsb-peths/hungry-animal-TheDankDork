@@ -1,7 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class Background extends Actor{
-
+public class Restart extends Actor{
     public void act(){
         
     }
