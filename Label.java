@@ -2,15 +2,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Label extends Actor{
 
+    private String context = "";
     private String value;
     private int fontSize;
     private Color lineColor = Color.BLACK;
     private Color fillColor = Color.WHITE;
     
-    private static final Color transparent = new Color(0,0,0,0);
+    private static final Color transparent = new Color(0, 0, 0, 0);
 
-    public Label(int value, int fontSize){
-        this(Integer.toString(value), fontSize);
+    public Label(String context, int value, int fontSize){
+        this.value = Integer.toString(value);
+        this.context = context; 
+        
+        this.fontSize = fontSize;
+        updateImage();
     }
 
     public Label(String value, int fontSize){
@@ -40,6 +45,7 @@ public class Label extends Actor{
     }
     
     private void updateImage(){
+        value = this.context + this.value;
         setImage(new GreenfootImage(value, fontSize, fillColor, transparent, lineColor));
     }
 }

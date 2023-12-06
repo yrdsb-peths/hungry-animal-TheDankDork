@@ -1,13 +1,14 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 
-public class Croc extends Actor{
-
+public class Croc extends Actor{       
     public void act(){
+        MyWorld world = (MyWorld) getWorld();
+        
         if(Greenfoot.isKeyDown("a")){
-            move(-1);
+            move(-3 - world.speedMod);
         }
         if(Greenfoot.isKeyDown("d")){
-            move(1);
+            move(3 + world.speedMod);
         }
 
         eat();
@@ -15,10 +16,20 @@ public class Croc extends Actor{
     
     private void eat(){
         if(isTouching(Food.class)){
-            removeTouching(Food.class);
             MyWorld world = (MyWorld) getWorld();
-            world.spawnPork(); 
-            world.increaseScore(1);
+            
+            removeTouching(Food.class);
+            world.modifyScore(Food.points);
+            
+            if(world.score < 0){
+                world.gameOver();
+            }
+            else{
+                if((world.score % 10) == 0){
+                    world.speedMod = (world.score / 10);
+                }
+               world.spawnRandom(); 
+            }            
         }
     }
 }
