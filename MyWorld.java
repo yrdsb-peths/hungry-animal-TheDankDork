@@ -26,7 +26,7 @@ public class MyWorld extends World{
         Label gameOverLabel = new Label("Game Over", 90);
         addObject(gameOverLabel, 300, 200);
         
-        Restart restartButton = new Restart();
+        Button restartButton = new Button("restart_button.png", 50, 50);
         addObject(restartButton, 300, 300);
     }
     
