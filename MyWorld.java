@@ -10,6 +10,8 @@ public class MyWorld extends World
       
     public MyWorld(){   
         super(600, 400, 1);
+        Background swamp = new Background();
+        addObject(swamp, 0, 100);
         
         Croc crocky = new Croc();      
         addObject(crocky, 95, 385);
