@@ -136,7 +136,7 @@ public class MyWorld extends World{
     
     // Spawn a random food using a random number generator.
     public void spawnRandom(){
-        int i = Greenfoot.getRandomNumber(50);
+        int i = Greenfoot.getRandomNumber(60);
         if(i < 30){
             spawnFish();
         }
@@ -151,6 +151,11 @@ public class MyWorld extends World{
         
         else if(i < 50){
             spawnBurger();
+        }
+        
+        else if(i < 60)
+        {
+            spawnAmongus();
         }
     }
     
@@ -181,6 +186,13 @@ public class MyWorld extends World{
         int x = Greenfoot.getRandomNumber(600);
         Food bomb = new Food(x, 0, -10, 0, "bomb.png", "bomb_sound.mp3");
         addObject(bomb, x, 0);
+    }
+    
+    public void spawnAmongus()
+    {
+        int x = Greenfoot.getRandomNumber(600);
+        Food Amongus = new Food(x, 0, 30, 2, "blueamongus.png", "kill.mp3");
+        addObject(Amongus, x, 0);
     }
     
     // Modify score based on number of points the food carries
