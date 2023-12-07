@@ -5,10 +5,10 @@ public class Croc extends Actor{
         MyWorld world = (MyWorld) getWorld();
         
         if(Greenfoot.isKeyDown("a")){
-            move(-3 - world.speedMod);
+            move(-4 - world.speedMod);
         }
         if(Greenfoot.isKeyDown("d")){
-            move(3 + world.speedMod);
+            move(4 + world.speedMod);
         }
 
         eat();
