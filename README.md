@@ -1,14 +1,15 @@
-# Hungry Animal Tutorial
-This is the README.md file.
-Change this file to show your intended audience what you want them to see.
+This is a simple game where the user control an animated cat to catch food that falls from the sky.
+Movement is controlled using A and D, and buttons are clicked using the mouse.
 
-You can use **Markdown** syntax to format this file to do things like **bold** or *italicize* text.
-[Markdown basics](https://www.markdownguide.org/getting-started/)
+Food: There are 4 different types.
 
-This particular repository is the starting template for the Hungry Elephant tutorial.
+      Fish - gives one point
+      
+      Lobster - gives 3 points
+      
+      Burger - the jackpot that gives 25 points, or lives if leaked
+      
+      Bomb - to be avoided and 10 points are docked if not
+Speed gradually increases as the game goes on, making it progressively more challenging.
 
-[Part 1: Greenfoot Basics](https://youtu.be/zxaa3X0MihI)
-
-[Part 2: Game Enhancements](https://youtu.be/TwID9i0Ey6o)
-
-[Part 3: Final Touches](https://youtu.be/GT-eFwa4Abc)
+When the game is over due to points hitting negative or lives reaching 0, the user may restart the game or return to the home page.
