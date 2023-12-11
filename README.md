@@ -8,6 +8,8 @@ Food: There are 4 different types.
       Lobster - gives 3 points
       
       Burger - the jackpot that gives 25 points, or lives if leaked
+
+      Among Us = gives 30 points
       
       Bomb - to be avoided and 10 points are docked if not
 Speed gradually increases as the game goes on, making it progressively more challenging.
